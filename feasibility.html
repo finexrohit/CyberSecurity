@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feasibility Study - Cyberbullying Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <!-- Navigation Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>🛡️ CyberGuard</h1>
+            </div>
+            <nav class="navbar">
+                <ul class="nav-links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/introduction">Introduction</a></li>
+                    <li><a href="/objectives">Objectives</a></li>
+                    <li><a href="/feasibility" class="active">Feasibility</a></li>
+                    <li><a href="/srs">SRS</a></li>
+                    <li><a href="/methodology">Methodology</a></li>
+                    <li><a href="/future_scope">Future Scope</a></li>
+                    <li><a href="/detect" class="btn-detect">Detect</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Feasibility Study</h1>
+            <p>Analyzing the Viability of the Cyberbullying Detection System</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Introduction -->
+            <section class="content-section">
+                <div class="content-box">
+                    <p>
+                        A <strong>feasibility study</strong> is a critical analysis conducted to determine 
+                        whether a project is viable and worth pursuing. This section examines the cyberbullying 
+                        detection system from four key perspectives: technical, operational, economic, and social feasibility.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Feasibility Cards -->
+            <div class="feasibility-grid">
+                <!-- Technical Feasibility -->
+                <section class="feasibility-card">
+                    <div class="feasibility-header technical">
+                        <div class="feasibility-icon">⚙️</div>
+                        <h2>Technical Feasibility</h2>
+                    </div>
+                    <div class="feasibility-content">
+                        <p>
+                            Technical feasibility assesses whether the required technology, expertise, 
+                            and resources are available to develop and implement the system successfully.
+                        </p>
+                        
+                        <h4>Available Technologies</h4>
+                        <ul>
+                            <li><strong>Python:</strong> Industry-standard programming language with extensive ML/NLP libraries</li>
+                            <li><strong>Scikit-learn:</strong> Comprehensive machine learning library for classification tasks</li>
+                            <li><strong>NLTK/SpaCy:</strong> Powerful NLP libraries for text preprocessing</li>
+                            <li><strong>Flask:</strong> Lightweight web framework for building web applications</li>
+                            <li><strong>TensorFlow/Keras:</strong> Deep learning frameworks for advanced models (optional)</li>
+                        </ul>
+
+                        <h4>Technical Requirements</h4>
+                        <ul>
+                            <li>Standard computer with Python 3.x installed</li>
+                            <li>Basic knowledge of ML and NLP concepts</li>
+                            <li>Access to labeled datasets for training</li>
+                            <li>Web browser for testing the application</li>
+                        </ul>
+
+                        <div class="feasibility-verdict success">
+                            <strong>✅ Verdict:</strong> Technically Feasible - All required technologies are 
+                            freely available, well-documented, and within the skill set of the development team.
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Operational Feasibility -->
+                <section class="feasibility-card">
+                    <div class="feasibility-header operational">
+                        <div class="feasibility-icon">🔧</div>
+                        <h2>Operational Feasibility</h2>
+                    </div>
+                    <div class="feasibility-content">
+                        <p>
+                            Operational feasibility evaluates whether the system can be effectively 
+                            implemented, maintained, and used in practical scenarios.
+                        </p>
+
+                        <h4>User Accessibility</h4>
+                        <ul>
+                            <li>Web-based interface accessible from any device with a browser</li>
+                            <li>No software installation required for end-users</li>
+                            <li>Intuitive design requiring minimal training</li>
+                            <li>Clear and understandable result presentation</li>
+                        </ul>
+
+                        <h4>Maintenance Requirements</h4>
+                        <ul>
+                            <li>Periodic model retraining with new data</li>
+                            <li>Regular security updates</li>
+                            <li>Server maintenance for deployed application</li>
+                            <li>Bug fixes and feature enhancements</li>
+                        </ul>
+
+                        <h4>Integration Capability</h4>
+                        <ul>
+                            <li>API endpoints for third-party integration</li>
+                            <li>Potential for browser extension development</li>
+                            <li>Compatible with existing content moderation workflows</li>
+                        </ul>
+
+                        <div class="feasibility-verdict success">
+                            <strong>✅ Verdict:</strong> Operationally Feasible - The system is designed 
+                            for ease of use and can be maintained with minimal overhead.
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Economic Feasibility -->
+                <section class="feasibility-card">
+                    <div class="feasibility-header economic">
+                        <div class="feasibility-icon">💰</div>
+                        <h2>Economic Feasibility</h2>
+                    </div>
+                    <div class="feasibility-content">
+                        <p>
+                            Economic feasibility analyzes the costs involved in developing and deploying 
+                            the system versus the benefits it provides.
+                        </p>
+
+                        <h4>Development Costs</h4>
+                        <table class="cost-table">
+                            <tr>
+                                <th>Item</th>
+                                <th>Cost</th>
+                            </tr>
+                            <tr>
+                                <td>Python & Libraries</td>
+                                <td>Free (Open Source)</td>
+                            </tr>
+                            <tr>
+                                <td>Development Environment</td>
+                                <td>Free (VS Code)</td>
+                            </tr>
+                            <tr>
+                                <td>Training Datasets</td>
+                                <td>Free (Public Datasets)</td>
+                            </tr>
+                            <tr>
+                                <td>Local Testing</td>
+                                <td>Free</td>
+                            </tr>
+                            <tr>
+                                <td>Cloud Hosting (Optional)</td>
+                                <td>$5-20/month</td>
+                            </tr>
+                        </table>
+
+                        <h4>Benefits</h4>
+                        <ul>
+                            <li>Automated detection saves manual moderation costs</li>
+                            <li>Scalable solution for handling large volumes of content</li>
+                            <li>Reduced liability for platforms hosting user content</li>
+                            <li>Potential for commercialization or API monetization</li>
+                        </ul>
+
+                        <div class="feasibility-verdict success">
+                            <strong>✅ Verdict:</strong> Economically Feasible - Development can be 
+                            accomplished with minimal financial investment using open-source tools.
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Social Feasibility -->
+                <section class="feasibility-card">
+                    <div class="feasibility-header social">
+                        <div class="feasibility-icon">🌍</div>
+                        <h2>Social Feasibility</h2>
+                    </div>
+                    <div class="feasibility-content">
+                        <p>
+                            Social feasibility examines the societal impact and acceptance of the 
+                            system, including ethical considerations.
+                        </p>
+
+                        <h4>Positive Social Impact</h4>
+                        <ul>
+                            <li>Helps create safer online spaces for all users</li>
+                            <li>Protects vulnerable individuals from harassment</li>
+                            <li>Reduces mental health impacts of cyberbullying</li>
+                            <li>Promotes responsible digital citizenship</li>
+                            <li>Supports educational institutions and parents in monitoring content</li>
+                        </ul>
+
+                        <h4>Ethical Considerations</h4>
+                        <ul>
+                            <li><strong>Privacy:</strong> Text analysis without storing personal data</li>
+                            <li><strong>Transparency:</strong> Clear explanation of detection criteria</li>
+                            <li><strong>Fairness:</strong> Avoiding bias in classification</li>
+                            <li><strong>Free Speech:</strong> Balancing protection with expression</li>
+                        </ul>
+
+                        <h4>Target Beneficiaries</h4>
+                        <ul>
+                            <li>Social media platforms</li>
+                            <li>Educational institutions</li>
+                            <li>Parents and guardians</li>
+                            <li>Online community moderators</li>
+                            <li>Mental health organizations</li>
+                        </ul>
+
+                        <div class="feasibility-verdict success">
+                            <strong>✅ Verdict:</strong> Socially Feasible - The system addresses a 
+                            genuine social need and can contribute positively to online safety.
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Overall Conclusion -->
+            <section class="content-section">
+                <h2>Overall Feasibility Conclusion</h2>
+                <div class="content-box conclusion-box">
+                    <div class="conclusion-icon">✅</div>
+                    <p>
+                        Based on the comprehensive analysis of technical, operational, economic, and 
+                        social factors, the <strong>Cyberbullying Detection Using Machine Learning</strong> 
+                        project is deemed <strong>FEASIBLE</strong> for development and implementation.
+                    </p>
+                    <p>
+                        All required resources, technologies, and expertise are available. The project 
+                        can be developed within reasonable time and budget constraints while delivering 
+                        significant value to users and society.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Navigation -->
+            <div class="page-navigation">
+                <a href="/objectives" class="btn btn-secondary">← Objectives</a>
+                <a href="/srs" class="btn btn-primary">Next: SRS →</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2025 Cyberbullying Detection Project. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

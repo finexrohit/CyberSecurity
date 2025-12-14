@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Methodology - Cyberbullying Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <!-- Navigation Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>🛡️ CyberGuard</h1>
+            </div>
+            <nav class="navbar">
+                <ul class="nav-links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/introduction">Introduction</a></li>
+                    <li><a href="/objectives">Objectives</a></li>
+                    <li><a href="/feasibility">Feasibility</a></li>
+                    <li><a href="/srs">SRS</a></li>
+                    <li><a href="/methodology" class="active">Methodology</a></li>
+                    <li><a href="/future_scope">Future Scope</a></li>
+                    <li><a href="/detect" class="btn-detect">Detect</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Methodology</h1>
+            <p>Step-by-Step Approach to Building the Detection System</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Overview -->
+            <section class="content-section">
+                <div class="content-box">
+                    <p>
+                        The development of the Cyberbullying Detection System follows a systematic 
+                        methodology that encompasses data collection, preprocessing, feature extraction, 
+                        model training, evaluation, and deployment. Each phase is crucial for building 
+                        an accurate and reliable classification system.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Methodology Steps -->
+            <section class="methodology-timeline">
+                <!-- Step 1: Data Collection -->
+                <div class="method-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h2>Data Collection</h2>
+                        <div class="step-details">
+                            <p>
+                                The first step involves gathering a comprehensive dataset of labeled 
+                                text samples containing both cyberbullying and non-bullying content.
+                            </p>
+                            
+                            <h4>Data Sources</h4>
+                            <ul>
+                                <li><strong>Kaggle Datasets:</strong> Publicly available cyberbullying detection datasets</li>
+                                <li><strong>Twitter API:</strong> Social media posts (with appropriate permissions)</li>
+                                <li><strong>Research Datasets:</strong> Academic datasets from published studies</li>
+                                <li><strong>Manual Annotation:</strong> Expert-labeled samples for validation</li>
+                            </ul>
+
+                            <h4>Dataset Characteristics</h4>
+                            <div class="data-stats">
+                                <div class="data-stat">
+                                    <span class="stat-value">~50,000+</span>
+                                    <span class="stat-label">Text Samples</span>
+                                </div>
+                                <div class="data-stat">
+                                    <span class="stat-value">2-3</span>
+                                    <span class="stat-label">Classes</span>
+                                </div>
+                                <div class="data-stat">
+                                    <span class="stat-value">80:20</span>
+                                    <span class="stat-label">Train:Test Split</span>
+                                </div>
+                            </div>
+
+                            <div class="code-example">
+                                <h4>Sample Data Format</h4>
+<pre>
+| Text                                    | Label        |
+|-----------------------------------------|--------------|
+| "You're amazing and I love your work!"  | Non-Bullying |
+| "You're so ugly, nobody likes you"      | Bullying     |
+| "This could be better, try again"       | Non-Bullying |
+</pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2: Preprocessing -->
+                <div class="method-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h2>Text Preprocessing</h2>
+                        <div class="step-details">
+                            <p>
+                                Raw social media text contains noise that must be cleaned before 
+                                feeding it to the machine learning model. Preprocessing transforms 
+                                unstructured text into a standardized format.
+                            </p>
+
+                            <h4>Preprocessing Pipeline</h4>
+                            <div class="pipeline-steps">
+                                <div class="pipeline-item">
+                                    <span class="pipeline-num">2.1</span>
+                                    <div class="pipeline-content">
+                                        <h5>Lowercasing</h5>
+                                        <p>Convert all text to lowercase for consistency</p>
+                                        <code>"HELLO World" → "hello world"</code>
+                                    </div>
+                                </div>
+                                <div class="pipeline-item">
+                                    <span class="pipeline-num">2.2</span>
+                                    <div class="pipeline-content">
+                                        <h5>URL Removal</h5>
+                                        <p>Remove hyperlinks and web addresses</p>
+                                        <code>"Check https://example.com" → "Check "</code>
+                                    </div>
+                                </div>
+                                <div class="pipeline-item">
+                                    <span class="pipeline-num">2.3</span>
+                                    <div class="pipeline-content">
+                                        <h5>Mention & Hashtag Removal</h5>
+                                        <p>Remove @mentions and #hashtags</p>
+                                        <code>"@user #topic hello" → " hello"</code>
+                                    </div>
+                                </div>
+                                <div class="pipeline-item">
+                                    <span class="pipeline-num">2.4</span>
+                                    <div class="pipeline-content">
+                                        <h5>Special Character Removal</h5>
+                                        <p>Remove punctuation, emojis, and numbers</p>
+                                        <code>"Hello!!! 123" → "Hello"</code>
+                                    </div>
+                                </div>
+                                <div class="pipeline-item">
+                                    <span class="pipeline-num">2.5</span>
+                                    <div class="pipeline-content">
+                                        <h5>Tokenization</h5>
+                                        <p>Split text into individual words (tokens)</p>
+                                        <code>"hello world" → ["hello", "world"]</code>
+                                    </div>
+                                </div>
+                                <div class="pipeline-item">
+                                    <span class="pipeline-num">2.6</span>
+                                    <div class="pipeline-content">
+                                        <h5>Stopword Removal</h5>
+                                        <p>Remove common words with little meaning</p>
+                                        <code>["the", "is", "good"] → ["good"]</code>
+                                    </div>
+                                </div>
+                                <div class="pipeline-item">
+                                    <span class="pipeline-num">2.7</span>
+                                    <div class="pipeline-content">
+                                        <h5>Lemmatization</h5>
+                                        <p>Reduce words to their base/dictionary form</p>
+                                        <code>"running", "runs" → "run"</code>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3: Feature Extraction -->
+                <div class="method-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h2>Feature Extraction</h2>
+                        <div class="step-details">
+                            <p>
+                                Machine learning models require numerical input. Feature extraction 
+                                converts preprocessed text into numerical vectors that capture the 
+                                semantic meaning of the text.
+                            </p>
+
+                            <h4>TF-IDF Vectorization</h4>
+                            <p>
+                                <strong>Term Frequency-Inverse Document Frequency (TF-IDF)</strong> is 
+                                used to convert text into numerical features. It measures how important 
+                                a word is to a document relative to the entire corpus.
+                            </p>
+
+                            <div class="formula-box">
+                                <h5>TF-IDF Formula</h5>
+                                <p class="formula">TF-IDF(t,d) = TF(t,d) × IDF(t)</p>
+                                <p>Where:</p>
+                                <ul>
+                                    <li><strong>TF(t,d)</strong> = Frequency of term t in document d</li>
+                                    <li><strong>IDF(t)</strong> = log(Total documents / Documents containing t)</li>
+                                </ul>
+                            </div>
+
+                            <h4>Feature Vector Example</h4>
+                            <div class="code-example">
+<pre>
+Input: "you are ugly stupid"
+                        
+After TF-IDF Vectorization:
+[0.0, 0.0, 0.45, 0.0, 0.52, 0.0, 0.0, 0.48, ...]
+                        
+(Sparse vector with weights for each word in vocabulary)
+</pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 4: Model Training -->
+                <div class="method-step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h2>Model Training</h2>
+                        <div class="step-details">
+                            <p>
+                                Multiple machine learning algorithms are trained and compared to 
+                                identify the best performing model for cyberbullying detection.
+                            </p>
+
+                            <h4>Algorithms Evaluated</h4>
+                            <div class="algorithm-grid">
+                                <div class="algorithm-card">
+                                    <h5>🎯 Support Vector Machine (SVM)</h5>
+                                    <p>Effective for high-dimensional text data, finds optimal hyperplane for classification</p>
+                                </div>
+                                <div class="algorithm-card">
+                                    <h5>🌲 Random Forest</h5>
+                                    <p>Ensemble method using multiple decision trees, robust against overfitting</p>
+                                </div>
+                                <div class="algorithm-card">
+                                    <h5>📊 Naive Bayes</h5>
+                                    <p>Probabilistic classifier, fast training and prediction, good baseline</p>
+                                </div>
+                                <div class="algorithm-card">
+                                    <h5>📈 Logistic Regression</h5>
+                                    <p>Simple yet effective, provides probability scores, interpretable</p>
+                                </div>
+                            </div>
+
+                            <h4>Training Process</h4>
+                            <ol class="training-steps">
+                                <li>Split data into training (80%) and testing (20%) sets</li>
+                                <li>Apply TF-IDF vectorization to training data</li>
+                                <li>Train each algorithm on the training set</li>
+                                <li>Perform cross-validation (k=5) for robust evaluation</li>
+                                <li>Tune hyperparameters using Grid Search</li>
+                                <li>Select best performing model</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 5: Model Evaluation -->
+                <div class="method-step">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h2>Model Evaluation</h2>
+                        <div class="step-details">
+                            <p>
+                                The trained models are evaluated using standard classification metrics 
+                                to assess their performance and select the best model.
+                            </p>
+
+                            <h4>Evaluation Metrics</h4>
+                            <div class="metrics-grid">
+                                <div class="metric-card">
+                                    <h5>Accuracy</h5>
+                                    <p>Overall correct predictions / Total predictions</p>
+                                    <span class="target">Target: ≥ 85%</span>
+                                </div>
+                                <div class="metric-card">
+                                    <h5>Precision</h5>
+                                    <p>True Positives / (True Positives + False Positives)</p>
+                                    <span class="target">Target: ≥ 80%</span>
+                                </div>
+                                <div class="metric-card">
+                                    <h5>Recall</h5>
+                                    <p>True Positives / (True Positives + False Negatives)</p>
+                                    <span class="target">Target: ≥ 80%</span>
+                                </div>
+                                <div class="metric-card">
+                                    <h5>F1-Score</h5>
+                                    <p>Harmonic mean of Precision and Recall</p>
+                                    <span class="target">Target: ≥ 80%</span>
+                                </div>
+                            </div>
+
+                            <h4>Confusion Matrix</h4>
+                            <div class="confusion-matrix">
+                                <table>
+                                    <tr>
+                                        <th></th>
+                                        <th>Predicted: Non-Bullying</th>
+                                        <th>Predicted: Bullying</th>
+                                    </tr>
+                                    <tr>
+                                        <th>Actual: Non-Bullying</th>
+                                        <td class="tn">True Negative (TN)</td>
+                                        <td class="fp">False Positive (FP)</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Actual: Bullying</th>
+                                        <td class="fn">False Negative (FN)</td>
+                                        <td class="tp">True Positive (TP)</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 6: Deployment -->
+                <div class="method-step">
+                    <div class="step-number">6</div>
+                    <div class="step-content">
+                        <h2>Deployment</h2>
+                        <div class="step-details">
+                            <p>
+                                The final trained model is serialized and integrated into a Flask 
+                                web application for real-time cyberbullying detection.
+                            </p>
+
+                            <h4>Deployment Steps</h4>
+                            <ol class="deployment-steps">
+                                <li><strong>Model Serialization:</strong> Save trained model using pickle (.pkl format)</li>
+                                <li><strong>Flask Integration:</strong> Load model in Flask application</li>
+                                <li><strong>API Development:</strong> Create prediction endpoint</li>
+                                <li><strong>Frontend Connection:</strong> Connect web interface to backend</li>
+                                <li><strong>Testing:</strong> Validate end-to-end functionality</li>
+                                <li><strong>Local Deployment:</strong> Run on localhost for demonstration</li>
+                            </ol>
+
+                            <h4>Project Structure</h4>
+                            <div class="code-example">
+<pre>
+cyberbullying-detection/
+├── app.py              # Flask application
+├── model.pkl           # Trained ML model
+├── vectorizer.pkl      # TF-IDF vectorizer
+├── train_model.py      # Model training script
+├── requirements.txt    # Python dependencies
+├── templates/          # HTML templates
+│   ├── index.html
+│   ├── detect.html
+│   └── ...
+└── static/             # CSS and JavaScript
+    ├── style.css
+    └── script.js
+</pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Navigation -->
+            <div class="page-navigation">
+                <a href="/srs" class="btn btn-secondary">← SRS</a>
+                <a href="/future_scope" class="btn btn-primary">Next: Future Scope →</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2025 Cyberbullying Detection Project. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

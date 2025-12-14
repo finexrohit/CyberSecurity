@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Future Scope - Cyberbullying Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <!-- Navigation Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>🛡️ CyberGuard</h1>
+            </div>
+            <nav class="navbar">
+                <ul class="nav-links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/introduction">Introduction</a></li>
+                    <li><a href="/objectives">Objectives</a></li>
+                    <li><a href="/feasibility">Feasibility</a></li>
+                    <li><a href="/srs">SRS</a></li>
+                    <li><a href="/methodology">Methodology</a></li>
+                    <li><a href="/future_scope" class="active">Future Scope</a></li>
+                    <li><a href="/detect" class="btn-detect">Detect</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Future Scope</h1>
+            <p>Potential Enhancements and Future Development Directions</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Introduction -->
+            <section class="content-section">
+                <div class="content-box">
+                    <p>
+                        While the current implementation provides a functional cyberbullying detection 
+                        system, there are numerous opportunities for enhancement and expansion. This 
+                        section outlines potential future developments that could significantly improve 
+                        the system's capabilities, reach, and impact.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Future Enhancements -->
+            <section class="future-grid">
+                <!-- Multilingual Support -->
+                <div class="future-card">
+                    <div class="future-icon">🌍</div>
+                    <div class="future-content">
+                        <h3>Multilingual Support</h3>
+                        <p>
+                            Extend the system to detect cyberbullying in multiple languages beyond 
+                            English, making it accessible to a global audience.
+                        </p>
+                        <h4>Implementation Approach</h4>
+                        <ul>
+                            <li>Train separate models for each language</li>
+                            <li>Use multilingual embeddings (mBERT, XLM-RoBERTa)</li>
+                            <li>Implement language detection for automatic routing</li>
+                            <li>Support code-mixing and transliteration</li>
+                        </ul>
+                        <h4>Target Languages</h4>
+                        <div class="language-tags">
+                            <span class="tag">Hindi</span>
+                            <span class="tag">Spanish</span>
+                            <span class="tag">French</span>
+                            <span class="tag">Arabic</span>
+                            <span class="tag">Chinese</span>
+                            <span class="tag">Portuguese</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Social Media API Integration -->
+                <div class="future-card">
+                    <div class="future-icon">📱</div>
+                    <div class="future-content">
+                        <h3>Social Media API Integration</h3>
+                        <p>
+                            Integrate directly with social media platforms to enable real-time 
+                            monitoring and automated content moderation.
+                        </p>
+                        <h4>Potential Integrations</h4>
+                        <ul>
+                            <li><strong>Twitter/X API:</strong> Monitor tweets and replies in real-time</li>
+                            <li><strong>Facebook Graph API:</strong> Analyze posts and comments</li>
+                            <li><strong>Instagram API:</strong> Scan captions and comment sections</li>
+                            <li><strong>YouTube API:</strong> Monitor video comments</li>
+                            <li><strong>Discord Bot:</strong> Moderate chat messages automatically</li>
+                        </ul>
+                        <h4>Features</h4>
+                        <ul>
+                            <li>Real-time stream processing</li>
+                            <li>Automated flagging and reporting</li>
+                            <li>User behavior analysis</li>
+                            <li>Trend detection for emerging harassment patterns</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Deep Learning Models -->
+                <div class="future-card">
+                    <div class="future-icon">🧠</div>
+                    <div class="future-content">
+                        <h3>Deep Learning Enhancement</h3>
+                        <p>
+                            Upgrade from traditional ML to advanced deep learning architectures 
+                            for improved accuracy and context understanding.
+                        </p>
+                        <h4>Advanced Models</h4>
+                        <ul>
+                            <li><strong>LSTM/BiLSTM:</strong> Capture sequential patterns in text</li>
+                            <li><strong>Transformers:</strong> State-of-the-art attention mechanisms</li>
+                            <li><strong>BERT:</strong> Pre-trained contextual embeddings</li>
+                            <li><strong>RoBERTa:</strong> Optimized BERT variant</li>
+                            <li><strong>GPT-based:</strong> Generative models for explanation</li>
+                        </ul>
+                        <h4>Expected Improvements</h4>
+                        <ul>
+                            <li>Better understanding of context and sarcasm</li>
+                            <li>Higher accuracy (95%+)</li>
+                            <li>Detection of subtle and implicit harassment</li>
+                            <li>Explanation generation for classifications</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Mobile Applications -->
+                <div class="future-card">
+                    <div class="future-icon">📲</div>
+                    <div class="future-content">
+                        <h3>Mobile Applications</h3>
+                        <p>
+                            Develop native mobile applications for iOS and Android to provide 
+                            on-the-go protection and parental monitoring capabilities.
+                        </p>
+                        <h4>Features</h4>
+                        <ul>
+                            <li>Real-time notification alerts</li>
+                            <li>Parental control dashboard</li>
+                            <li>Message screening before sending</li>
+                            <li>Activity reports and analytics</li>
+                            <li>Educational resources for children</li>
+                        </ul>
+                        <h4>Technology Options</h4>
+                        <div class="tech-tags">
+                            <span class="tag">React Native</span>
+                            <span class="tag">Flutter</span>
+                            <span class="tag">Swift</span>
+                            <span class="tag">Kotlin</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Browser Extensions -->
+                <div class="future-card">
+                    <div class="future-icon">🔌</div>
+                    <div class="future-content">
+                        <h3>Browser Extensions</h3>
+                        <p>
+                            Create browser extensions that automatically scan and flag harmful 
+                            content as users browse social media platforms.
+                        </p>
+                        <h4>Functionality</h4>
+                        <ul>
+                            <li>Real-time page content scanning</li>
+                            <li>Highlight potentially harmful comments</li>
+                            <li>Warning overlays on toxic content</li>
+                            <li>Option to hide/blur harmful content</li>
+                            <li>Report functionality with one click</li>
+                        </ul>
+                        <h4>Supported Browsers</h4>
+                        <div class="browser-icons">
+                            <span class="browser">Chrome</span>
+                            <span class="browser">Firefox</span>
+                            <span class="browser">Edge</span>
+                            <span class="browser">Safari</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI Moderation Dashboard -->
+                <div class="future-card">
+                    <div class="future-icon">📊</div>
+                    <div class="future-content">
+                        <h3>AI Moderation Dashboard</h3>
+                        <p>
+                            Build a comprehensive dashboard for content moderators and platform 
+                            administrators to manage and review flagged content efficiently.
+                        </p>
+                        <h4>Dashboard Features</h4>
+                        <ul>
+                            <li><strong>Real-time Analytics:</strong> Live statistics and trends</li>
+                            <li><strong>Content Queue:</strong> Review and action flagged content</li>
+                            <li><strong>User Management:</strong> Track repeat offenders</li>
+                            <li><strong>Reporting:</strong> Generate compliance reports</li>
+                            <li><strong>Model Feedback:</strong> Improve model with human input</li>
+                        </ul>
+                        <h4>Visualization Components</h4>
+                        <ul>
+                            <li>Interactive charts and graphs</li>
+                            <li>Heat maps of harassment hotspots</li>
+                            <li>Time-series analysis</li>
+                            <li>Geographic distribution maps</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Multimodal Detection -->
+                <div class="future-card">
+                    <div class="future-icon">🎭</div>
+                    <div class="future-content">
+                        <h3>Multimodal Detection</h3>
+                        <p>
+                            Expand beyond text to analyze images, videos, and audio content 
+                            for comprehensive cyberbullying detection.
+                        </p>
+                        <h4>Modalities</h4>
+                        <ul>
+                            <li><strong>Image Analysis:</strong> Detect harmful memes, edited photos</li>
+                            <li><strong>Video Analysis:</strong> Identify harassment in video content</li>
+                            <li><strong>Audio Analysis:</strong> Speech-to-text for voice messages</li>
+                            <li><strong>Combined Analysis:</strong> Cross-modal context understanding</li>
+                        </ul>
+                        <h4>Technologies</h4>
+                        <ul>
+                            <li>Computer Vision (CNN, ResNet, YOLO)</li>
+                            <li>OCR for text in images</li>
+                            <li>Video frame analysis</li>
+                            <li>Speech recognition APIs</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Severity Classification -->
+                <div class="future-card">
+                    <div class="future-icon">⚠️</div>
+                    <div class="future-content">
+                        <h3>Severity Classification</h3>
+                        <p>
+                            Implement graduated severity levels to prioritize response and 
+                            enable appropriate action based on threat level.
+                        </p>
+                        <h4>Severity Levels</h4>
+                        <ul>
+                            <li><strong>Level 1 - Mild:</strong> Minor insults, general negativity</li>
+                            <li><strong>Level 2 - Moderate:</strong> Personal attacks, repeated harassment</li>
+                            <li><strong>Level 3 - Severe:</strong> Threats, hate speech, doxxing</li>
+                            <li><strong>Level 4 - Critical:</strong> Credible threats, emergency intervention needed</li>
+                        </ul>
+                        <h4>Response Actions</h4>
+                        <ul>
+                            <li>Automated warnings for mild cases</li>
+                            <li>Content removal for moderate cases</li>
+                            <li>Account suspension for severe cases</li>
+                            <li>Emergency services notification for critical cases</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Research Directions -->
+            <section class="content-section">
+                <h2>Research Directions</h2>
+                <div class="content-box">
+                    <div class="research-grid">
+                        <div class="research-item">
+                            <h4>🔬 Explainable AI (XAI)</h4>
+                            <p>Develop interpretable models that explain why content was classified as bullying</p>
+                        </div>
+                        <div class="research-item">
+                            <h4>🎭 Sarcasm Detection</h4>
+                            <p>Improve detection of sarcastic and ironic harassment that current models miss</p>
+                        </div>
+                        <div class="research-item">
+                            <h4>🔄 Active Learning</h4>
+                            <p>Implement continuous learning from user feedback to improve accuracy over time</p>
+                        </div>
+                        <div class="research-item">
+                            <h4>🛡️ Adversarial Robustness</h4>
+                            <p>Protect against attempts to evade detection through creative spelling or encoding</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Conclusion -->
+            <section class="content-section">
+                <h2>Conclusion</h2>
+                <div class="content-box conclusion-box">
+                    <p>
+                        The future of cyberbullying detection lies in the convergence of advanced 
+                        AI technologies, seamless platform integration, and user-centric design. 
+                        By pursuing these enhancements, we can create more effective tools that 
+                        protect users across all digital platforms and contribute to a safer, 
+                        more respectful online environment.
+                    </p>
+                    <p>
+                        The roadmap outlined above provides a clear path for continuous improvement 
+                        and expansion of the current system, ensuring it remains relevant and 
+                        effective as online harassment tactics evolve.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Navigation -->
+            <div class="page-navigation">
+                <a href="/methodology" class="btn btn-secondary">← Methodology</a>
+                <a href="/detect" class="btn btn-primary">Try Detection Tool →</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2025 Cyberbullying Detection Project. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

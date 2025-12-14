@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objectives - Cyberbullying Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <!-- Navigation Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>🛡️ CyberGuard</h1>
+            </div>
+            <nav class="navbar">
+                <ul class="nav-links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/introduction">Introduction</a></li>
+                    <li><a href="/objectives" class="active">Objectives</a></li>
+                    <li><a href="/feasibility">Feasibility</a></li>
+                    <li><a href="/srs">SRS</a></li>
+                    <li><a href="/methodology">Methodology</a></li>
+                    <li><a href="/future_scope">Future Scope</a></li>
+                    <li><a href="/detect" class="btn-detect">Detect</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Project Objectives</h1>
+            <p>Goals and Aims of the Cyberbullying Detection System</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Primary Objectives -->
+            <section class="content-section">
+                <h2>Primary Objectives</h2>
+                <div class="content-box">
+                    <p>
+                        The primary goal of this project is to develop an automated system for detecting 
+                        cyberbullying content in social media text using Machine Learning and Natural 
+                        Language Processing techniques. The specific objectives are:
+                    </p>
+                </div>
+            </section>
+
+            <!-- Objectives Grid -->
+            <section class="objectives-section">
+                <div class="objective-card">
+                    <div class="objective-number">01</div>
+                    <div class="objective-content">
+                        <h3>Detect Cyberbullying in Social Media Text</h3>
+                        <p>
+                            Develop a robust classification system capable of accurately identifying 
+                            cyberbullying content in various forms of social media text, including 
+                            posts, comments, tweets, and messages. The system should distinguish 
+                            between bullying, non-bullying, and potentially harmful content.
+                        </p>
+                        <ul class="objective-details">
+                            <li>Handle diverse text formats and styles</li>
+                            <li>Detect subtle forms of harassment</li>
+                            <li>Minimize false positives and negatives</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="objective-card">
+                    <div class="objective-number">02</div>
+                    <div class="objective-content">
+                        <h3>Preprocess Text Using NLP Techniques</h3>
+                        <p>
+                            Implement comprehensive Natural Language Processing pipelines to clean, 
+                            normalize, and prepare raw text data for machine learning classification. 
+                            This includes handling noise, slang, and informal language common in 
+                            social media.
+                        </p>
+                        <ul class="objective-details">
+                            <li>Text cleaning and normalization</li>
+                            <li>Tokenization and lemmatization</li>
+                            <li>Stopword removal and feature extraction</li>
+                            <li>TF-IDF vectorization</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="objective-card">
+                    <div class="objective-number">03</div>
+                    <div class="objective-content">
+                        <h3>Train Machine Learning Classification Models</h3>
+                        <p>
+                            Train and evaluate multiple machine learning algorithms to determine 
+                            the most effective approach for cyberbullying detection. Compare 
+                            performance metrics to select the optimal model for deployment.
+                        </p>
+                        <ul class="objective-details">
+                            <li>Implement various ML algorithms (SVM, Random Forest, Naive Bayes, etc.)</li>
+                            <li>Perform hyperparameter tuning</li>
+                            <li>Evaluate using accuracy, precision, recall, and F1-score</li>
+                            <li>Handle class imbalance issues</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="objective-card">
+                    <div class="objective-number">04</div>
+                    <div class="objective-content">
+                        <h3>Provide Real-Time Detection Through User-Friendly Interface</h3>
+                        <p>
+                            Develop an intuitive web-based interface that allows users to input 
+                            text and receive instant classification results. The interface should 
+                            be accessible, responsive, and easy to use for users of all technical 
+                            backgrounds.
+                        </p>
+                        <ul class="objective-details">
+                            <li>Clean and professional UI design</li>
+                            <li>Real-time text analysis</li>
+                            <li>Clear result presentation with confidence scores</li>
+                            <li>Responsive design for all devices</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="objective-card">
+                    <div class="objective-number">05</div>
+                    <div class="objective-content">
+                        <h3>Promote Responsible Digital Communication</h3>
+                        <p>
+                            Contribute to creating a safer online environment by providing tools 
+                            that help identify harmful content. Raise awareness about the impact 
+                            of cyberbullying and encourage positive digital citizenship.
+                        </p>
+                        <ul class="objective-details">
+                            <li>Educational resources about cyberbullying</li>
+                            <li>Promote awareness of online safety</li>
+                            <li>Encourage respectful online behavior</li>
+                            <li>Support victims and prevention efforts</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Expected Outcomes -->
+            <section class="content-section">
+                <h2>Expected Outcomes</h2>
+                <div class="content-box">
+                    <div class="outcomes-grid">
+                        <div class="outcome-item">
+                            <div class="outcome-icon">✅</div>
+                            <h4>Functional Detection System</h4>
+                            <p>A working prototype capable of classifying text as bullying or non-bullying</p>
+                        </div>
+                        <div class="outcome-item">
+                            <div class="outcome-icon">📊</div>
+                            <h4>High Accuracy Model</h4>
+                            <p>ML model achieving at least 85% accuracy on test data</p>
+                        </div>
+                        <div class="outcome-item">
+                            <div class="outcome-icon">🌐</div>
+                            <h4>Web Application</h4>
+                            <p>Deployed Flask application accessible through web browser</p>
+                        </div>
+                        <div class="outcome-item">
+                            <div class="outcome-icon">📖</div>
+                            <h4>Documentation</h4>
+                            <p>Comprehensive project documentation and user guide</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Navigation -->
+            <div class="page-navigation">
+                <a href="/introduction" class="btn btn-secondary">← Introduction</a>
+                <a href="/feasibility" class="btn btn-primary">Next: Feasibility Study →</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2025 Cyberbullying Detection Project. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

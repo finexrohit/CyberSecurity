@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SRS - Cyberbullying Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <!-- Navigation Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>🛡️ CyberGuard</h1>
+            </div>
+            <nav class="navbar">
+                <ul class="nav-links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/introduction">Introduction</a></li>
+                    <li><a href="/objectives">Objectives</a></li>
+                    <li><a href="/feasibility">Feasibility</a></li>
+                    <li><a href="/srs" class="active">SRS</a></li>
+                    <li><a href="/methodology">Methodology</a></li>
+                    <li><a href="/future_scope">Future Scope</a></li>
+                    <li><a href="/detect" class="btn-detect">Detect</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Software Requirement Specification</h1>
+            <p>Technical Requirements and System Architecture</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Document Overview -->
+            <section class="content-section">
+                <h2>1. Document Overview</h2>
+                <div class="content-box">
+                    <h4>1.1 Purpose</h4>
+                    <p>
+                        This Software Requirement Specification (SRS) document provides a complete 
+                        description of all the functionalities and specifications of the 
+                        <strong>Cyberbullying Detection System</strong>. It serves as a guide for 
+                        development, testing, and deployment phases.
+                    </p>
+
+                    <h4>1.2 Scope</h4>
+                    <p>
+                        The system is designed to detect cyberbullying content in social media text 
+                        using machine learning. It provides a web-based interface for users to input 
+                        text and receive classification results indicating whether the content 
+                        contains cyberbullying.
+                    </p>
+
+                    <h4>1.3 Definitions and Acronyms</h4>
+                    <table class="definitions-table">
+                        <tr>
+                            <th>Term</th>
+                            <th>Definition</th>
+                        </tr>
+                        <tr>
+                            <td>NLP</td>
+                            <td>Natural Language Processing</td>
+                        </tr>
+                        <tr>
+                            <td>ML</td>
+                            <td>Machine Learning</td>
+                        </tr>
+                        <tr>
+                            <td>TF-IDF</td>
+                            <td>Term Frequency-Inverse Document Frequency</td>
+                        </tr>
+                        <tr>
+                            <td>API</td>
+                            <td>Application Programming Interface</td>
+                        </tr>
+                        <tr>
+                            <td>SVM</td>
+                            <td>Support Vector Machine</td>
+                        </tr>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Functional Requirements -->
+            <section class="content-section">
+                <h2>2. Functional Requirements</h2>
+                <div class="content-box">
+                    <div class="requirement-grid">
+                        <div class="requirement-card">
+                            <div class="req-header">
+                                <span class="req-id">FR-01</span>
+                                <h4>Text Input</h4>
+                            </div>
+                            <p><strong>Description:</strong> The system shall accept text input from users through a web form.</p>
+                            <ul>
+                                <li>Support for single text entries (up to 5000 characters)</li>
+                                <li>Text area with placeholder instructions</li>
+                                <li>Submit button to initiate analysis</li>
+                                <li>Clear/Reset button to clear input</li>
+                            </ul>
+                        </div>
+
+                        <div class="requirement-card">
+                            <div class="req-header">
+                                <span class="req-id">FR-02</span>
+                                <h4>Text Preprocessing</h4>
+                            </div>
+                            <p><strong>Description:</strong> The system shall preprocess input text using NLP techniques.</p>
+                            <ul>
+                                <li>Convert text to lowercase</li>
+                                <li>Remove URLs, mentions, and hashtags</li>
+                                <li>Remove special characters and numbers</li>
+                                <li>Tokenize text into words</li>
+                                <li>Remove stopwords</li>
+                                <li>Apply lemmatization</li>
+                            </ul>
+                        </div>
+
+                        <div class="requirement-card">
+                            <div class="req-header">
+                                <span class="req-id">FR-03</span>
+                                <h4>Text Classification</h4>
+                            </div>
+                            <p><strong>Description:</strong> The system shall classify preprocessed text using ML model.</p>
+                            <ul>
+                                <li>TF-IDF vectorization of cleaned text</li>
+                                <li>Classification using trained ML model</li>
+                                <li>Output categories: Bullying, Non-Bullying, Potentially Harmful</li>
+                                <li>Confidence score calculation</li>
+                            </ul>
+                        </div>
+
+                        <div class="requirement-card">
+                            <div class="req-header">
+                                <span class="req-id">FR-04</span>
+                                <h4>Result Output</h4>
+                            </div>
+                            <p><strong>Description:</strong> The system shall display classification results to the user.</p>
+                            <ul>
+                                <li>Clear visual indication of classification (color-coded)</li>
+                                <li>Confidence score as percentage</li>
+                                <li>Descriptive message explaining the result</li>
+                                <li>Option to analyze new text</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Non-Functional Requirements -->
+            <section class="content-section">
+                <h2>3. Non-Functional Requirements</h2>
+                <div class="content-box">
+                    <div class="nfr-grid">
+                        <div class="nfr-item">
+                            <h4>⚡ Performance</h4>
+                            <ul>
+                                <li>Response time < 2 seconds for text analysis</li>
+                                <li>Support for concurrent users</li>
+                                <li>Efficient memory usage</li>
+                            </ul>
+                        </div>
+                        <div class="nfr-item">
+                            <h4>🔒 Security</h4>
+                            <ul>
+                                <li>No persistent storage of user input</li>
+                                <li>Input validation and sanitization</li>
+                                <li>HTTPS for deployed version</li>
+                            </ul>
+                        </div>
+                        <div class="nfr-item">
+                            <h4>📱 Usability</h4>
+                            <ul>
+                                <li>Responsive design for all devices</li>
+                                <li>Intuitive user interface</li>
+                                <li>Clear error messages</li>
+                            </ul>
+                        </div>
+                        <div class="nfr-item">
+                            <h4>🔧 Maintainability</h4>
+                            <ul>
+                                <li>Modular code architecture</li>
+                                <li>Comprehensive documentation</li>
+                                <li>Easy model updates</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- System Architecture -->
+            <section class="content-section">
+                <h2>4. System Architecture</h2>
+                <div class="content-box">
+                    <h4>4.1 High-Level Architecture</h4>
+                    <div class="architecture-diagram">
+                        <div class="arch-flow">
+                            <div class="arch-box user">
+                                <div class="arch-icon">👤</div>
+                                <div class="arch-label">User</div>
+                            </div>
+                            <div class="arch-arrow">→</div>
+                            <div class="arch-box web">
+                                <div class="arch-icon">🌐</div>
+                                <div class="arch-label">Web Interface</div>
+                            </div>
+                            <div class="arch-arrow">→</div>
+                            <div class="arch-box flask">
+                                <div class="arch-icon">🔧</div>
+                                <div class="arch-label">Flask Backend</div>
+                            </div>
+                            <div class="arch-arrow">→</div>
+                            <div class="arch-box nlp">
+                                <div class="arch-icon">📝</div>
+                                <div class="arch-label">NLP Pipeline</div>
+                            </div>
+                            <div class="arch-arrow">→</div>
+                            <div class="arch-box ml">
+                                <div class="arch-icon">🤖</div>
+                                <div class="arch-label">ML Model</div>
+                            </div>
+                            <div class="arch-arrow">→</div>
+                            <div class="arch-box result">
+                                <div class="arch-icon">📊</div>
+                                <div class="arch-label">Result</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h4>4.2 Component Description</h4>
+                    <table class="component-table">
+                        <tr>
+                            <th>Component</th>
+                            <th>Technology</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr>
+                            <td>Frontend</td>
+                            <td>HTML, CSS, JavaScript</td>
+                            <td>User interface for text input and result display</td>
+                        </tr>
+                        <tr>
+                            <td>Backend</td>
+                            <td>Python Flask</td>
+                            <td>Server-side logic, API endpoints, request handling</td>
+                        </tr>
+                        <tr>
+                            <td>NLP Pipeline</td>
+                            <td>NLTK / SpaCy</td>
+                            <td>Text preprocessing and cleaning</td>
+                        </tr>
+                        <tr>
+                            <td>Feature Extraction</td>
+                            <td>TF-IDF Vectorizer</td>
+                            <td>Converting text to numerical features</td>
+                        </tr>
+                        <tr>
+                            <td>ML Model</td>
+                            <td>Scikit-learn</td>
+                            <td>Trained classification model (SVM/Random Forest)</td>
+                        </tr>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Hardware & Software Requirements -->
+            <section class="content-section">
+                <h2>5. Hardware & Software Requirements</h2>
+                <div class="content-box">
+                    <div class="requirements-split">
+                        <div class="req-column">
+                            <h4>💻 Hardware Requirements</h4>
+                            <table class="hw-table">
+                                <tr>
+                                    <td>Processor</td>
+                                    <td>Intel i3 or equivalent (minimum)</td>
+                                </tr>
+                                <tr>
+                                    <td>RAM</td>
+                                    <td>4 GB minimum (8 GB recommended)</td>
+                                </tr>
+                                <tr>
+                                    <td>Storage</td>
+                                    <td>500 MB free space</td>
+                                </tr>
+                                <tr>
+                                    <td>Network</td>
+                                    <td>Internet connection (for deployment)</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="req-column">
+                            <h4>📦 Software Requirements</h4>
+                            <table class="sw-table">
+                                <tr>
+                                    <td>Operating System</td>
+                                    <td>Windows 10+ / Linux / macOS</td>
+                                </tr>
+                                <tr>
+                                    <td>Python</td>
+                                    <td>Version 3.8 or higher</td>
+                                </tr>
+                                <tr>
+                                    <td>Web Browser</td>
+                                    <td>Chrome, Firefox, Edge, Safari</td>
+                                </tr>
+                                <tr>
+                                    <td>IDE</td>
+                                    <td>VS Code (recommended)</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Data Flow -->
+            <section class="content-section">
+                <h2>6. Data Flow Diagram</h2>
+                <div class="content-box">
+                    <div class="dfd-container">
+                        <div class="dfd-level">
+                            <h4>Level 0 - Context Diagram</h4>
+                            <div class="dfd-diagram">
+                                <div class="dfd-entity">User</div>
+                                <div class="dfd-arrow">Text Input →</div>
+                                <div class="dfd-process">Cyberbullying Detection System</div>
+                                <div class="dfd-arrow">← Classification Result</div>
+                                <div class="dfd-entity">User</div>
+                            </div>
+                        </div>
+                        <div class="dfd-level">
+                            <h4>Level 1 - Process Breakdown</h4>
+                            <ol class="dfd-steps">
+                                <li><strong>1.0 Receive Input:</strong> Accept text from web form</li>
+                                <li><strong>2.0 Preprocess Text:</strong> Clean and normalize text using NLP</li>
+                                <li><strong>3.0 Extract Features:</strong> Convert text to TF-IDF vectors</li>
+                                <li><strong>4.0 Classify:</strong> Apply ML model for prediction</li>
+                                <li><strong>5.0 Generate Output:</strong> Format and return results</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Navigation -->
+            <div class="page-navigation">
+                <a href="/feasibility" class="btn btn-secondary">← Feasibility Study</a>
+                <a href="/methodology" class="btn btn-primary">Next: Methodology →</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2025 Cyberbullying Detection Project. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction - Cyberbullying Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <!-- Navigation Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>🛡️ CyberGuard</h1>
+            </div>
+            <nav class="navbar">
+                <ul class="nav-links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/introduction" class="active">Introduction</a></li>
+                    <li><a href="/objectives">Objectives</a></li>
+                    <li><a href="/feasibility">Feasibility</a></li>
+                    <li><a href="/srs">SRS</a></li>
+                    <li><a href="/methodology">Methodology</a></li>
+                    <li><a href="/future_scope">Future Scope</a></li>
+                    <li><a href="/detect" class="btn-detect">Detect</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Introduction</h1>
+            <p>Understanding Cyberbullying and the Need for Automated Detection</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- What is Cyberbullying -->
+            <section class="content-section">
+                <h2>What is Cyberbullying?</h2>
+                <div class="content-box">
+                    <p>
+                        <strong>Cyberbullying</strong> refers to the use of digital communication tools—such as 
+                        social media platforms, messaging applications, emails, and online forums—to harass, 
+                        threaten, intimidate, or harm individuals. Unlike traditional bullying, cyberbullying 
+                        can occur 24/7 and reach victims anywhere, making it particularly pervasive and harmful.
+                    </p>
+                    <p>
+                        Cyberbullying manifests in various forms, including:
+                    </p>
+                    <ul class="styled-list">
+                        <li><strong>Insults and Name-calling:</strong> Offensive language and derogatory remarks targeting individuals</li>
+                        <li><strong>Threats and Intimidation:</strong> Direct or implied threats of physical or emotional harm</li>
+                        <li><strong>Hate Comments:</strong> Discriminatory remarks based on race, gender, religion, or other characteristics</li>
+                        <li><strong>False Information:</strong> Spreading rumors, lies, or manipulated content to damage reputation</li>
+                        <li><strong>Exclusion:</strong> Deliberately excluding individuals from online groups or activities</li>
+                        <li><strong>Impersonation:</strong> Creating fake profiles to harass or defame someone</li>
+                        <li><strong>Cyberstalking:</strong> Persistent unwanted contact or monitoring of online activities</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Impact on Victims -->
+            <section class="content-section">
+                <h2>Impact on Victims</h2>
+                <div class="content-box">
+                    <p>
+                        The effects of cyberbullying on victims are profound and far-reaching, often causing 
+                        lasting psychological and emotional damage. Research indicates that cyberbullying 
+                        can lead to:
+                    </p>
+                    <div class="impact-grid">
+                        <div class="impact-card">
+                            <div class="impact-icon">😰</div>
+                            <h3>Stress and Anxiety</h3>
+                            <p>Constant fear of online attacks leads to heightened stress levels and chronic anxiety disorders.</p>
+                        </div>
+                        <div class="impact-card">
+                            <div class="impact-icon">😔</div>
+                            <h3>Depression</h3>
+                            <p>Victims often experience feelings of hopelessness, sadness, and loss of interest in daily activities.</p>
+                        </div>
+                        <div class="impact-card">
+                            <div class="impact-icon">💔</div>
+                            <h3>Emotional Trauma</h3>
+                            <p>Deep-seated emotional scars that can affect relationships and self-worth for years.</p>
+                        </div>
+                        <div class="impact-card">
+                            <div class="impact-icon">📉</div>
+                            <h3>Academic Decline</h3>
+                            <p>Difficulty concentrating on studies, leading to poor academic performance.</p>
+                        </div>
+                        <div class="impact-card">
+                            <div class="impact-icon">🚫</div>
+                            <h3>Social Isolation</h3>
+                            <p>Withdrawal from social interactions, both online and offline.</p>
+                        </div>
+                        <div class="impact-card">
+                            <div class="impact-icon">⚠️</div>
+                            <h3>Self-Harm Tendencies</h3>
+                            <p>In severe cases, victims may develop self-destructive behaviors or suicidal thoughts.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Need for Automated Detection -->
+            <section class="content-section">
+                <h2>The Need for Automated Detection</h2>
+                <div class="content-box">
+                    <p>
+                        With the exponential growth of social media usage, the volume of online content has 
+                        become impossible to monitor manually. Traditional approaches to content moderation 
+                        are inadequate due to:
+                    </p>
+                    <ul class="styled-list">
+                        <li><strong>Scale:</strong> Millions of posts, comments, and messages are generated every minute</li>
+                        <li><strong>Speed:</strong> Harmful content can spread rapidly before human moderators can intervene</li>
+                        <li><strong>Subtlety:</strong> Cyberbullying often uses coded language, sarcasm, or context-dependent meanings</li>
+                        <li><strong>Resource Constraints:</strong> Human moderation is expensive and emotionally taxing for moderators</li>
+                    </ul>
+
+                    <div class="highlight-box">
+                        <h3>Solution: AI-Powered Detection</h3>
+                        <p>
+                            <strong>Natural Language Processing (NLP)</strong> and <strong>Machine Learning (ML)</strong> 
+                            technologies offer a scalable, efficient, and consistent approach to detecting cyberbullying. 
+                            By training algorithms on large datasets of labeled text, we can create systems that:
+                        </p>
+                        <ul>
+                            <li>Analyze text content in real-time</li>
+                            <li>Identify patterns associated with harmful behavior</li>
+                            <li>Classify content with high accuracy</li>
+                            <li>Provide instant feedback and alerts</li>
+                            <li>Learn and adapt to new forms of harassment</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Project Overview -->
+            <section class="content-section">
+                <h2>Project Overview</h2>
+                <div class="content-box">
+                    <p>
+                        This project, <strong>"Cyberbullying Detection Using Machine Learning"</strong>, 
+                        aims to develop an intelligent system capable of automatically detecting and 
+                        classifying cyberbullying content in social media text. The system utilizes:
+                    </p>
+                    <div class="tech-stack">
+                        <div class="tech-item">
+                            <span class="tech-name">NLP Preprocessing</span>
+                            <span class="tech-desc">Tokenization, lemmatization, stopword removal</span>
+                        </div>
+                        <div class="tech-item">
+                            <span class="tech-name">TF-IDF Vectorization</span>
+                            <span class="tech-desc">Converting text to numerical features</span>
+                        </div>
+                        <div class="tech-item">
+                            <span class="tech-name">ML Classification</span>
+                            <span class="tech-desc">Training models to categorize content</span>
+                        </div>
+                        <div class="tech-item">
+                            <span class="tech-name">Web Interface</span>
+                            <span class="tech-desc">User-friendly platform for real-time detection</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Navigation -->
+            <div class="page-navigation">
+                <a href="/" class="btn btn-secondary">← Back to Home</a>
+                <a href="/objectives" class="btn btn-primary">Next: Objectives →</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2025 Cyberbullying Detection Project. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
